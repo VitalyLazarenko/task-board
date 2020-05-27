@@ -18,6 +18,10 @@ export class ActionCreators {
     return {type: actionTypes.SELECT_CARD, id};
   }
 
+  static deselectCardActionCreator(): Action {
+    return {type: actionTypes.SELECT_CARD};
+  }
+
   static updateCardActionCreator(card: ICard): Action {
     return {type: actionTypes.UPDATE_CARD, card};
   }

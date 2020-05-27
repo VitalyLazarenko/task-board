@@ -18,6 +18,10 @@ export const reducer: Reducer<IReducerState, Action> = (state: IReducerState, ac
       return {...state, selectedCardId: action.id};
     }
 
+    case actionTypes.DESELECT_CARD: {
+      return {...state, selectedCardId: ''};
+    }
+
     case actionTypes.UPDATE_CARD: {
       let cards: ICard[] = state.cards.map((card: ICard) => {
         if (card.id === action.card.id) {

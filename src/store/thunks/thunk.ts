@@ -1,0 +1,44 @@
+import {ActionCreators} from "../actions";
+import {Action, ICard} from "../../interfaces";
+import {CardService} from "../../api";
+
+export function getCardsThunk() {
+  return (dispatch: (action: Action) => void) => {
+    dispatch(ActionCreators.switchLoadingSpinnerActionCreator(true));
+    CardService.getAll().then((cards: ICard[]) => {
+      dispatch(ActionCreators.initCardsActionCreator(cards));
+      dispatch(ActionCreators.switchLoadingSpinnerActionCreator(false));
+    });
+  };
+}
+
+export function createCardThunk(data: ICard) {
+  return (dispatch: (action: Action) => void) => {
+    dispatch(ActionCreators.switchLoadingSpinnerActionCreator(true));
+    CardService.create(data).then((card: ICard) => {
+      dispatch(ActionCreators.createCardActionCreator(card));
+      dispatch(ActionCreators.switchLoadingSpinnerActionCreator(false));
+    });
+  };
+}
+
+export function updateCardThunk(data: ICard) {
+  return (dispatch: (action: Action) => void) => {
+    dispatch(ActionCreators.switchLoadingSpinnerActionCreator(true));
+    CardService.update(data).then((card: ICard) => {
+      dispatch(ActionCreators.updateCardActionCreator(card));
+      dispatch(ActionCreators.deselectCardActionCreator());
+      dispatch(ActionCreators.switchLoadingSpinnerActionCreator(false));
+    });
+  };
+}
+
+export function moveCardThunk(id: string, status: string) {
+  return (dispatch: (action: Action) => void) => {
+    dispatch(ActionCreators.switchLoadingSpinnerActionCreator(true));
+    CardService.move(id, status).then(() => {
+      dispatch(ActionCreators.moveCardActionCreator(id, status));
+      dispatch(ActionCreators.switchLoadingSpinnerActionCreator(false));
+    });
+  };
+}
