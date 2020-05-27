@@ -16,6 +16,7 @@
     padding-bottom: 10px;
 
 }
+/* Button style */
 .btn-edit{
     width: 35px;
     height: 35px;
@@ -30,8 +31,14 @@
     background-color: #2091e9;
     font-size: 15px;
     border-radius: 50%;
-    border: 1px solid rgba(0,0,0,0.1);
 }
+.btn-edit:hover {
+    cursor: pointer;
+    color: #2091e9;
+    background-color: #fff;
+}
+/* END is Button style */
+
 /* Styling text */
 .header-title {
     margin-bottom: 5px;
@@ -44,9 +51,9 @@
     font-weight: 600;
     color: rgba(33,32,37,0.65);
 }
-/* Styling text - end*/
+/* END if Styling text*/
 
-
+/* Tags style */
 .tags-container {
     width: auto;
     height: auto;
@@ -57,6 +64,7 @@
     align-items: center;
 }
 .UI-design {
+    text-align: center;
     margin: 0px 5px 0px 0px;
     border-radius: 5px;
     padding: 3px;
@@ -64,6 +72,7 @@
     background-color: #98ca5b;
 }
 .Marketing {
+    text-align: center;
     margin: 0px 5px 0px 0px;
     border-radius: 5px;
     padding: 3px;
@@ -71,9 +80,11 @@
     background-color: #8c80e0;
 }
 .Research {
+    text-align: center;
     margin: 0px 5px 0px 0px;
     border-radius: 5px;
     padding: 3px;
     color: #f1f8e9;
     background-color: #ca4554;
 }
+/* END is Tags style */

@@ -1,13 +1,12 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-import './app.css';
 import {TopBar} from './TopBar';
-import {Column} from './Column';
+import {Board} from "./Board";
 
 /**
  * App
  */
-export default class App extends React.Component {
+export default class App extends Component {
   /**
    * Method render
    * @return {string} render app.
@@ -16,13 +15,7 @@ export default class App extends React.Component {
     return (
       <div>
         <TopBar/>
-        <div className="board-container">
-          <Column nameColumn={'Backlog'}/>
-          <Column nameColumn={'Selected'}/>
-          <Column nameColumn={'Running'}/>
-          <Column nameColumn={'Evaluating'}/>
-          <Column nameColumn={'Live'}/>
-        </div>
+        <Board/>
       </div>
     );
   }

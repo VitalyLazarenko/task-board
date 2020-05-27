@@ -8,7 +8,10 @@ export class Card extends Component<any, any> {
   render() {
     return (
       <div className="card-container">
-        <button className="btn-edit" onClick={this.editClick}>Edit</button>
+        <div
+          className="btn-edit"
+          onClick={this.editClick}
+        >Edit</div>
         <div className='body-card'>
           <label className="header-title">Заголовок карточки!</label>
           <label className="description-title">Ка́рты та́ро́ — колода карт, используемая с середины XV века в
