@@ -1,7 +1,9 @@
 import {Action, ICard, IReducerState, ITag} from "../../interfaces";
 import {actionTypes} from "../actions";
+import {Reducer} from "redux";
 
-export const reducer = (state: IReducerState, action: Action): IReducerState => {
+// @ts-ignore
+export const reducer: Reducer<IReducerState, Action> = (state: IReducerState, action: Action): IReducerState => {
   switch (action.type) {
 
     case actionTypes.UI_LOADING: {
