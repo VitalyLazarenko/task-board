@@ -27,10 +27,11 @@
     background-color: rgba(254, 254, 254, 0.2);
 
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 .column-header label{
+    margin: 10px;
     color: #fff;
     font-size: 22px;
     font-weight: 700;

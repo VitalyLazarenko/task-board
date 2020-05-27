@@ -14,6 +14,16 @@
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+.completed {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.completed label {
+    text-decoration: line-through;
+}
+.completed completed-teg {
 
 }
 /* Button style */

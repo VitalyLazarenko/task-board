@@ -5,6 +5,7 @@ export class Card extends Component<any, any> {
   editClick() {
     alert('Edit click!');
   }
+
   render() {
     return (
       <div className="card-container">
