@@ -1,2 +1,1 @@
-import {AddCard} from "./AddCard";
-export default AddCard;
+export * from './AddCard';

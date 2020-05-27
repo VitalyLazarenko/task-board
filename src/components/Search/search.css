@@ -1,0 +1,24 @@
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+}
+.btn-search {
+    width: 50px;
+    height: 50px;
+
+    margin: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #fff;
+    background-color: #2091e9;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.1);
+}

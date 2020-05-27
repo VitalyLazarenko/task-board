@@ -1,0 +1,79 @@
+.card-container{
+    width: auto;
+    height: auto;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.body-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+.btn-edit{
+    width: 35px;
+    height: 35px;
+    float: right;
+    margin: 3px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #fff;
+    background-color: #2091e9;
+    font-size: 15px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+/* Styling text */
+.header-title {
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(33,32,37,0.80);
+}
+.description-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(33,32,37,0.65);
+}
+/* Styling text - end*/
+
+
+.tags-container {
+    width: auto;
+    height: auto;
+    margin: 10px 0px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.UI-design {
+    margin: 0px 5px 0px 0px;
+    border-radius: 5px;
+    padding: 3px;
+    color: #f1f8e9;
+    background-color: #98ca5b;
+}
+.Marketing {
+    margin: 0px 5px 0px 0px;
+    border-radius: 5px;
+    padding: 3px;
+    color: #f1f8e9;
+    background-color: #8c80e0;
+}
+.Research {
+    margin: 0px 5px 0px 0px;
+    border-radius: 5px;
+    padding: 3px;
+    color: #f1f8e9;
+    background-color: #ca4554;
+}

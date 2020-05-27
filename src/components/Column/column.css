@@ -1,0 +1,37 @@
+.column-container {
+    width: 20%;
+    background-color: #7c888e;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Status style column */
+.selected {
+    background-color: #f0c825;
+}
+.running {
+    background-color: #c41c31;
+}
+.evaluating {
+    background-color: #2091e9;
+}
+.live {
+    background-color: #8ed735;
+}
+/* END - Status style column */
+
+.column-header {
+    width: 100%;
+    height: 60px;
+    background-color: rgba(254, 254, 254, 0.2);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.column-header label{
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+}

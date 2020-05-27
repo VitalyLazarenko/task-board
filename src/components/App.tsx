@@ -1,8 +1,8 @@
 import React from 'react';
-import Card from './Card';
-import CreateEditCard from './CreateEditcard';
+
+import './app.css';
 import {TopBar} from './TopBar';
-import Column from './Column';
+import {Column} from './Column';
 
 /**
  * App
@@ -16,9 +16,13 @@ export default class App extends React.Component {
     return (
       <div>
         <TopBar/>
-        <CreateEditCard/>
-        <Column/>
-        <Card/>
+        <div className="board-container">
+          <Column nameColumn={'Backlog'}/>
+          <Column nameColumn={'Selected'}/>
+          <Column nameColumn={'Running'}/>
+          <Column nameColumn={'Evaluating'}/>
+          <Column nameColumn={'Live'}/>
+        </div>
       </div>
     );
   }
