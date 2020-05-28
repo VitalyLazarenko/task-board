@@ -15,23 +15,43 @@
     padding-top: 10px;
     padding-bottom: 10px;
 }
-.completed {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
 .completed label {
     text-decoration: line-through;
 }
-.completed completed-teg {
+.status {
+    width: 100%;
+    height: 45px;
 
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
+.status span{
+    color: #98ca5b;
+    font-size: 18px;
+    font-weight: bold;
+}
+.icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #98ca5b;
+    color: #fff;
+    margin: 0 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Button style */
 .btn-edit{
     width: 35px;
     height: 35px;
-    float: right;
     margin: 3px;
+    float: right;
 
     display: flex;
     justify-content: center;

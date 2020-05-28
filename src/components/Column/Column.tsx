@@ -21,19 +21,19 @@ export class Column extends Component<any, any>{
     }
   }
   render() {
-      let {nameColumn} = this.props;
+      let {nameColumn, status} = this.props;
         return(
             <div className={this.createClassName(nameColumn)}>
                 <div className="column-header">
                     <label>{this.props.nameColumn}</label>
                     <label>9</label>
                 </div>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
+                <Card status={status}/>
+                <Card status={status}/>
+                <Card status={status}/>
+                <Card status={status}/>
+                <Card status={status}/>
+                <Card status={status}/>
                 <AddCard typeBtn={'column'}/>
             </div>
         )
