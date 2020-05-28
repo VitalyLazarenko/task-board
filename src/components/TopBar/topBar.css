@@ -1,7 +1,6 @@
 .topBar-container {
     width: auto;
     height: 60px;
-    border: 1px solid #FF000000;
 
     display: flex;
     justify-content: flex-end;

@@ -1,2 +1,1 @@
-import {CreateEditCard} from "./CreateEditCard";
-export default CreateEditCard;
+export * from './CreateEditCard';

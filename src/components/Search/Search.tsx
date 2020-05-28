@@ -8,10 +8,13 @@ export class Search extends Component<any, any>{
 
     render() {
         return (
+          <div className="search-container">
+              <input/>
                 <div id="search"
                      className='btn-search'
                      onClick={this.searchClick}
                 >Search</div>
+          </div>
         )
     }
 }

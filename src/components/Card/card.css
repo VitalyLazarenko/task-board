@@ -18,6 +18,9 @@
 .completed label {
     text-decoration: line-through;
 }
+.completed btn-edit{
+    visibility: hidden;
+}
 .status {
     width: 100%;
     height: 45px;
