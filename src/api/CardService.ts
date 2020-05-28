@@ -1,45 +1,35 @@
 import {ICard} from "../interfaces";
-
-const apiBaseURL = '';
+import {db} from '../firebase';
 
 export class CardService {
   static getAll(): Promise<ICard[]> {
-    return fetch(`${apiBaseURL}/cards/`).then((response) => response.json());
+    return db.collection("cards")
+      .get()
+      .then((docs) => {
+        const cards: ICard[] = [];
+        docs.forEach((card) => {
+          // @ts-ignore
+          cards.push({id: card.id, ...card.data()});
+        });
+        return cards;
+      });
   }
 
-  static get(id: number): Promise<ICard> {
-    return fetch(`${apiBaseURL}/cards/${id}`).then((response) =>
-      response.json(),
-    );
+  static create(data: ICard): Promise<string> {
+    return db.collection("cards")
+      .add(data)
+      .then((res) => res.id);
   }
 
-  static create(data: ICard): Promise<ICard> {
-    return fetch(`${apiBaseURL}/cards/`, {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
-    }).then((response) => response.json());
+  static update(id: string, data: ICard): Promise<ICard> {
+    return db.collection("cards").doc(id)
+      .update(data)
+      .then(() => data);
   }
 
-  static update(data: ICard): Promise<ICard> {
-    return fetch(`${apiBaseURL}/cards/${data.id}`, {
-      method: 'PUT',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
-    }).then((response) => response.json());
-  }
-
-  static move(id: string, status: string) {
-    return fetch(`${apiBaseURL}/cards/${id}`, {
-      method: 'PUT',
-      body: status,
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
-    }).then((response) => response.json());
+  static move(id: string, status: string): Promise<string> {
+    return db.collection("cards").doc(id)
+      .update({status})
+      .then(() => id);
   }
 }

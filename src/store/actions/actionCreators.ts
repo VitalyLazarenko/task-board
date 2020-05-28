@@ -10,8 +10,8 @@ export class ActionCreators {
     return {type: actionTypes.INIT_CARDS, cards};
   }
 
-  static createCardActionCreator(card: ICard): Action {
-    return {type: actionTypes.CREATE_CARD, card};
+  static createCardActionCreator(id: string, data: ICard): Action {
+    return {type: actionTypes.CREATE_CARD, id, data};
   }
 
   static selectCardActionCreator(id: string): Action {

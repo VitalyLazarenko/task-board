@@ -10,6 +10,10 @@ export const reducer: Reducer<IReducerState, Action> = (state: IReducerState, ac
       return {...state, isLoading: action.status};
     }
 
+    case actionTypes.CREATE_CARD: {
+      return {...state, cards: [...state.cards, {...action.data, id: action.id}]}
+    }
+
     case actionTypes.INIT_CARDS: {
       return {...state, cards: action.cards};
     }

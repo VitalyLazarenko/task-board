@@ -15,17 +15,17 @@ export function getCardsThunk() {
 export function createCardThunk(data: ICard) {
   return (dispatch: (action: Action) => void) => {
     dispatch(ActionCreators.switchLoadingSpinnerActionCreator(true));
-    CardService.create(data).then((card: ICard) => {
-      dispatch(ActionCreators.createCardActionCreator(card));
+    CardService.create(data).then((id: string) => {
+      dispatch(ActionCreators.createCardActionCreator(id, data));
       dispatch(ActionCreators.switchLoadingSpinnerActionCreator(false));
     });
   };
 }
 
-export function updateCardThunk(data: ICard) {
+export function updateCardThunk(id: string, data: ICard) {
   return (dispatch: (action: Action) => void) => {
     dispatch(ActionCreators.switchLoadingSpinnerActionCreator(true));
-    CardService.update(data).then((card: ICard) => {
+    CardService.update(id, data).then((card: ICard) => {
       dispatch(ActionCreators.updateCardActionCreator(card));
       dispatch(ActionCreators.deselectCardActionCreator());
       dispatch(ActionCreators.switchLoadingSpinnerActionCreator(false));
