@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import {TopBar} from './TopBar';
 import {Board} from "./Board";
+import {CreateEditCard} from "./CreateEditcard";
 
 /**
  * App

@@ -8,7 +8,6 @@ export class TopBar extends Component<any, any>{
     render() {
         return (
             <div className="topBar-container">
-                <AddCard/>
                 <Search/>
             </div>
         )

@@ -9,6 +9,7 @@ export class Card extends Component<any, any> {
   render() {
     let statusProps = this.props.status;
     let status = statusProps === 'completed' ? completed() : null;
+
     return (
       <div className={statusProps === 'completed' ? "card-container completed" : "card-container"}>
         {status}

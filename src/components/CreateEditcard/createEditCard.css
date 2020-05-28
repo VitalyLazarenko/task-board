@@ -1,0 +1,188 @@
+input {
+    margin: 5px 10px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid rgba(157,164,158,0.6);
+}
+label {
+    margin: 0px 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(74, 76, 74, 0.8);
+}
+textarea {
+    margin: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(157,164,158,0.6);
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    width: 500px;
+    height: 500px;
+    margin: 10px;
+    border-radius: 10px;
+
+    background-color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header label{
+    font-size: 20px;
+}
+.body {
+    display: flex;
+    flex-direction: column;
+}
+.in-description {
+    height: 100px;
+}
+
+/* Status box - styles*/
+.status-box {
+    margin: 5px 0;
+    display: flex;
+    justify-content: center;
+}
+.backlog {
+    text-align: center;
+    margin: 0px 5px 0px 0px;
+    border-radius: 5px;
+    padding: 5px;
+    color: #f1f8e9;
+    font-weight: 600;
+    background-color: #7c888e;
+}
+.selected {
+    text-align: center;
+    margin: 0px 5px 0px 0px;
+    border-radius: 5px;
+    padding: 5px;
+    color: #f1f8e9;
+    font-weight: 600;
+    background-color: #f0c825;
+}
+.running {
+    text-align: center;
+    margin: 0px 5px 0px 0px;
+    border-radius: 5px;
+    padding: 5px;
+    color: #f1f8e9;
+    font-weight: 600;
+    background-color: #c41c31;
+}
+.evaluating {
+    text-align: center;
+    margin: 0px 5px 0px 0px;
+    border-radius: 5px;
+    padding: 5px;
+    color: #f1f8e9;
+    font-weight: 600;
+    background-color: #2091e9;
+}
+.live {
+    text-align: center;
+    margin: 0px 5px 0px 0px;
+    border-radius: 5px;
+    padding: 5px;
+    color: #f1f8e9;
+    font-weight: 600;
+    background-color: #8ed735;
+}
+
+/* END of Status box - styles*/
+
+/* Tag box - styles*/
+.tag-box {
+    margin: 5px 0;
+    display: flex;
+    justify-content: center;
+}
+.UI-design {
+    text-align: center;
+    margin: 0px 5px 0px 0px;
+    border-radius: 5px;
+    padding: 5px;
+    color: #f1f8e9;
+    font-weight: 600;
+    background-color: #98ca5b;
+}
+.marketing {
+    text-align: center;
+    margin: 0px 5px 0px 0px;
+    border-radius: 5px;
+    padding: 5px;
+    color: #f1f8e9;
+    font-weight: 600;
+    background-color: #8c80e0;
+}
+.research {
+    text-align: center;
+    margin: 0px 5px 0px 0px;
+    border-radius: 5px;
+    padding: 5px;
+    color: #f1f8e9;
+    font-weight: 600;
+    background-color: #ca4554;
+}
+/* END of Tag box - styles*/
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+}
+.cancel {
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    margin: 0px 5px 0px 0px;
+    border-radius: 5px;
+    padding: 5px;
+    color: #f1f8e9;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #ca4554;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.submit {
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    margin: 0px 5px 0px 0px;
+    border-radius: 5px;
+    padding: 5px;
+    color: #f1f8e9;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #2091e9;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
