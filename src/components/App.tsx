@@ -1,23 +1,21 @@
-import React, {Component} from 'react';
+import React, {useEffect} from 'react';
 
 import {TopBar} from './TopBar';
 import {Board} from "./Board";
-import {CreateEditCard} from "./CreateEditcard";
+import {getCardsThunk} from "../store/thunks";
 
 /**
  * App
  */
-export default class App extends Component {
-  /**
-   * Method render
-   * @return {string} render app.
-   */
-  render() {
-    return (
-      <div>
-        <TopBar/>
-        <Board/>
-      </div>
-    );
-  }
+export default function App() {
+  useEffect(() => {
+    getCardsThunk();
+  })
+
+  return (
+    <div>
+      <TopBar/>
+      <Board/>
+    </div>
+  );
 }
