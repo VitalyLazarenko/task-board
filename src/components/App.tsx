@@ -1,4 +1,6 @@
 import React, {useEffect} from 'react';
+import {Provider} from 'react-redux';
+import store from './../store';
 
 import {TopBar} from './TopBar';
 import {Board} from "./Board";
@@ -16,9 +18,11 @@ export default function App() {
   })
 
   return (
+  <Provider store={store}>
     <div>
       <TopBar/>
       <Board popUp={false}/>
     </div>
+  </Provider>
   );
 }
