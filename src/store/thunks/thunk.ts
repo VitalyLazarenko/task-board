@@ -3,6 +3,7 @@ import {Action, ICard} from "../../interfaces";
 import {CardService} from "../../api";
 
 export function getCardsThunk() {
+  console.log(1)
   return (dispatch: (action: Action) => void) => {
     dispatch(ActionCreators.switchLoadingSpinnerActionCreator(true));
     CardService.getAll().then((cards: ICard[]) => {

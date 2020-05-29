@@ -36,3 +36,32 @@
     font-size: 22px;
     font-weight: 700;
 }
+.btn-addCard {
+    width: 35px;
+    height: 35px;
+    margin: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #fff;
+    background-color: #2091e9;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 50%;
+}
+.column {
+    color: #2091e9;
+    background-color: #fff;
+}
+.btn-addCard:hover {
+    cursor: pointer;
+    color: #2091e9;
+    background-color: #fff;
+}
+.btn-addCard.column:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: #2091e9;
+}

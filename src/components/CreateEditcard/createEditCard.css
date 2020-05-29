@@ -160,6 +160,7 @@ body{
     text-align: center;
     margin: 0px 5px 0px 0px;
     border-radius: 5px;
+    border: 1px solid #ca4554;
     padding: 5px;
     color: #f1f8e9;
     font-size: 20px;
@@ -170,12 +171,18 @@ body{
     justify-content: center;
     align-items: center;
 }
+.cancel:hover {
+    cursor: pointer;
+    color: #ca4554;
+    background-color: #fff;
+}
 .submit {
     width: 80px;
     height: 30px;
     text-align: center;
     margin: 0px 5px 0px 0px;
     border-radius: 5px;
+    border: 1px solid #2091e9;
     padding: 5px;
     color: #f1f8e9;
     font-size: 20px;
@@ -185,4 +192,9 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.submit:hover {
+    cursor: pointer;
+    color: #2091e9;
+    background-color: #fff;
 }

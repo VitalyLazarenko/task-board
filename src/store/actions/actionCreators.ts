@@ -3,11 +3,12 @@ import {actionTypes} from './actionTypes';
 
 export class ActionCreators {
   static switchLoadingSpinnerActionCreator(status: boolean): Action {
+    console.log(3);
     return {type: actionTypes.UI_LOADING, status};
   }
 
   static initCardsActionCreator(cards: ICard[]): Action {
-    console.log(3);
+    console.log(4);
     return {type: actionTypes.INIT_CARDS, cards};
   }
 

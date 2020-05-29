@@ -2,7 +2,6 @@ import React,{Component} from "react";
 
 import './column.css';
 import {Card} from "../Card";
-import {AddCard} from "../AddCard";
 
 export class Column extends Component<any, any>{
   createClassName(column: any) {
@@ -21,20 +20,20 @@ export class Column extends Component<any, any>{
     }
   }
   render() {
-      let {nameColumn, status} = this.props;
+      let {nameColumn, status, onBtnClick} = this.props;
         return(
             <div className={this.createClassName(nameColumn)}>
                 <div className="column-header">
                     <label>{this.props.nameColumn}</label>
                     <label>9</label>
                 </div>
-                <Card status={status}/>
-                <Card status={status}/>
-                <Card status={status}/>
-                <Card status={status}/>
-                <Card status={status}/>
-                <Card status={status}/>
-                <AddCard typeBtn={'column'}/>
+                <Card status={status} onBtnClick={onBtnClick}/>
+                <Card status={status} onBtnClick={onBtnClick}/>
+
+              <div id="AddCard"
+                   className="btn-addCard column"
+                   onClick={onBtnClick}
+              >+</div>
             </div>
         )
     }

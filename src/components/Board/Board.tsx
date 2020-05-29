@@ -1,20 +1,31 @@
-import React,{Component} from "react";
+import React, {Component} from "react";
 
 import './board.css';
 import {Column} from "../Column";
 import {CreateEditCard} from "../CreateEditcard";
 
-export class Board extends Component<any, any>{
+export class Board extends Component<any, any> {
+  state = {
+    popUp: false
+  }
+
+  handleClick = () => {
+    this.setState({popUp: !this.state.popUp})
+    console.log('popUp')
+  }
+
   render() {
-    let popUp = false;
-    return(
+    return (
       <div className="board-container">
-        {popUp && <CreateEditCard/>}
-        <Column nameColumn={'Backlog'} status={'Backlog'}/>
-        <Column nameColumn={'Selected'} status={'Selected'}/>
-        <Column nameColumn={'Running'} status={'Running'}/>
-        <Column nameColumn={'Evaluating'} status={'Evaluating'}/>
-        <Column nameColumn={'Live'} status={'completed'}/>
+        {this.state.popUp && <CreateEditCard onBtnClick={this.handleClick}/>}
+
+        <Column nameColumn={'Backlog'}
+                status={'Backlog'}
+                onBtnClick={this.handleClick}/>
+        <Column nameColumn={'Selected'} status={'Selected'} onBtnClick={this.handleClick}/>
+        <Column nameColumn={'Running'} status={'Running'} onBtnClick={this.handleClick}/>
+        <Column nameColumn={'Evaluating'} status={'Evaluating'} onBtnClick={this.handleClick}/>
+        <Column nameColumn={'Live'} status={'completed'} onBtnClick={this.handleClick}/>
       </div>
     )
   }

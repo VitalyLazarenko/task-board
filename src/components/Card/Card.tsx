@@ -2,10 +2,6 @@ import React, {Component} from "react";
 import './card.css';
 
 export class Card extends Component<any, any> {
-  editClick() {
-    alert('Edit click!');
-  }
-
   render() {
     let statusProps = this.props.status;
     let status = statusProps === 'completed' ? completed() : null;
@@ -15,7 +11,7 @@ export class Card extends Component<any, any> {
         {status}
         <div
           className="btn-edit"
-          onClick={this.editClick}
+          onClick={this.props.onBtnClick}
         >Edit
         </div>
         <div className='body-card'>

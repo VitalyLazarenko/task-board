@@ -15,7 +15,7 @@ export default function App() {
   return (
     <div>
       <TopBar/>
-      <Board/>
+      <Board popUp={false}/>
     </div>
   );
 }

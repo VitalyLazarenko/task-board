@@ -18,7 +18,7 @@
 .completed label {
     text-decoration: line-through;
 }
-.completed btn-edit{
+.completed .btn-edit{
     visibility: hidden;
 }
 .status {

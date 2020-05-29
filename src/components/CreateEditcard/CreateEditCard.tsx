@@ -3,6 +3,7 @@ import './createEditCard.css';
 
 export class CreateEditCard extends Component<any, any> {
   render() {
+    let {onBtnClick} = this.props;
     return (
       <>
         <div className="background">
@@ -14,7 +15,9 @@ export class CreateEditCard extends Component<any, any> {
               <label>Title: </label>
               <input id="title"/>
               <label>Description: </label>
-                <textarea id="description" className="in-description"></textarea>
+                <textarea
+                  id="description"
+                  className="in-description"/>
 
                 <label style={{
                     textAlign: "center",
@@ -34,7 +37,7 @@ export class CreateEditCard extends Component<any, any> {
               </div>
             </div>
             <div className="footer">
-              <div className="cancel">
+              <div className="cancel" onClick={onBtnClick}>
                 <span>Сancel</span>
               </div>
               <div className="submit">
