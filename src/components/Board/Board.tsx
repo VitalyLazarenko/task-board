@@ -11,7 +11,6 @@ export class Board extends Component<any, any> {
 
   handleClick = () => {
     this.setState({popUp: !this.state.popUp})
-    console.log('popUp')
   }
 
   render() {

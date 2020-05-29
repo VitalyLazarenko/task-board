@@ -15,9 +15,10 @@ textarea {
     border-radius: 5px;
     border: 1px solid rgba(157,164,158,0.6);
 }
+
 body{
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
 .background {
@@ -34,6 +35,7 @@ body{
     align-items: center;
 }
 .container {
+    position: relative;
     width: 500px;
     height: 500px;
     margin: 10px;
@@ -60,60 +62,6 @@ body{
 .in-description {
     height: 100px;
 }
-
-/* Status box - styles*/
-.status-box {
-    margin: 5px 0;
-    display: flex;
-    justify-content: center;
-}
-.backlog {
-    text-align: center;
-    margin: 0px 5px 0px 0px;
-    border-radius: 5px;
-    padding: 5px;
-    color: #f1f8e9;
-    font-weight: 600;
-    background-color: #7c888e;
-}
-.selected {
-    text-align: center;
-    margin: 0px 5px 0px 0px;
-    border-radius: 5px;
-    padding: 5px;
-    color: #f1f8e9;
-    font-weight: 600;
-    background-color: #f0c825;
-}
-.running {
-    text-align: center;
-    margin: 0px 5px 0px 0px;
-    border-radius: 5px;
-    padding: 5px;
-    color: #f1f8e9;
-    font-weight: 600;
-    background-color: #c41c31;
-}
-.evaluating {
-    text-align: center;
-    margin: 0px 5px 0px 0px;
-    border-radius: 5px;
-    padding: 5px;
-    color: #f1f8e9;
-    font-weight: 600;
-    background-color: #2091e9;
-}
-.live {
-    text-align: center;
-    margin: 0px 5px 0px 0px;
-    border-radius: 5px;
-    padding: 5px;
-    color: #f1f8e9;
-    font-weight: 600;
-    background-color: #8ed735;
-}
-
-/* END of Status box - styles*/
 
 /* Tag box - styles*/
 .tag-box {

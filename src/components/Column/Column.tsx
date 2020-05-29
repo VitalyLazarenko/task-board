@@ -29,6 +29,8 @@ export class Column extends Component<any, any>{
                 </div>
                 <Card status={status} onBtnClick={onBtnClick}/>
                 <Card status={status} onBtnClick={onBtnClick}/>
+                <Card status={status} onBtnClick={onBtnClick}/>
+                <Card status={status} onBtnClick={onBtnClick}/>
 
               <div id="AddCard"
                    className="btn-addCard column"
