@@ -3,7 +3,6 @@ import {actionTypes} from './actionTypes';
 
 export class ActionCreators {
   static switchLoadingSpinnerActionCreator(status: boolean): Action {
-    console.log(3);
     return {type: actionTypes.UI_LOADING, status};
   }
 

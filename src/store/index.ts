@@ -1,18 +1,24 @@
 import { applyMiddleware, createStore } from 'redux';
-import ReduxThunk from 'redux-thunk';
+import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import {reducer} from './reducers'
 import {IReducerState} from "../interfaces";
 
-export default function configureStore(preloadedState: IReducerState) {
-  const middlewares = [ReduxThunk];
-  const middlewareEnhancer = applyMiddleware(...middlewares);
+const preloadedState: IReducerState = {
+  isLoading: false,
+  cards: [],
+  selectedCardId: '',
+  search: {
+    enable: false,
+    relevantCardIds: []
+  }
+};
+
+export default (function configureStore(preloadedState: IReducerState) {
+  const middlewareEnhancer = applyMiddleware(thunk);
 
   const enhancers = [middlewareEnhancer];
   const composedEnhancers = composeWithDevTools(...enhancers);
-
-  const store = createStore(reducer, preloadedState, composedEnhancers);
-
-  return store;
-}
+  return createStore(reducer, preloadedState, composedEnhancers);
+})(preloadedState);

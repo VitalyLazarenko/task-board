@@ -14,7 +14,8 @@ import {getCardsThunk} from "../store/thunks";
  */
 export default function App() {
   useEffect(() => {
-    getCardsThunk();
+    // @ts-ignore
+    store.dispatch(getCardsThunk());
   })
 
   return (
