@@ -2,39 +2,24 @@ import React,{Component} from "react";
 
 import './column.css';
 import {Card} from "../Card";
+import {ICard} from "../../interfaces";
 
 export class Column extends Component<any, any>{
-  createClassName(column: any) {
-    let className = 'column-container';
-    switch (column) {
-      case 'Selected':
-        return  className += ' selected';
-      case 'Running' :
-        return className += ' running';
-      case 'Evaluating':
-        return className += ' evaluating';
-      case 'Live':
-        return className += ' live';
-      default:
-        return className;
-    }
-  }
   render() {
-      let {nameColumn, status, onBtnClick} = this.props;
+      let {nameColumn, status, createCardClick, editCardClick, cards} = this.props;
+      const content = cards.map((card: ICard) => <Card key={card.id} status={status} data={card} editCardClick={editCardClick}/>)
         return(
-            <div className={this.createClassName(nameColumn)}>
+            <div className={`column-container ${status}`}>
                 <div className="column-header">
-                    <label>{this.props.nameColumn}</label>
-                    <label>9</label>
+                    <label>{nameColumn}</label>
+                    <label>{content.length}</label>
                 </div>
-                <Card status={status} onBtnClick={onBtnClick}/>
-                <Card status={status} onBtnClick={onBtnClick}/>
-                <Card status={status} onBtnClick={onBtnClick}/>
-                <Card status={status} onBtnClick={onBtnClick}/>
+
+              {content}
 
               <div id="AddCard"
                    className="btn-addCard column"
-                   onClick={onBtnClick}
+                   onClick={() => createCardClick(status)}
               >+</div>
             </div>
         )

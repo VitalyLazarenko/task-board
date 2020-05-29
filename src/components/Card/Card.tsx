@@ -4,10 +4,10 @@ import './card.css';
 export class Card extends Component<any, any> {
   render() {
     let statusProps = this.props.status;
-    let status = statusProps === 'completed' ? completed() : null;
+    let status = statusProps === 'live' ? completed() : null;
 
     return (
-      <div className={statusProps === 'completed' ? "card-container completed" : "card-container"}>
+      <div className={statusProps === 'live' ? "card-container completed" : "card-container"}>
         {status}
         <div
           className="btn-edit"

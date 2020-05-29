@@ -3,10 +3,8 @@ import {Provider} from 'react-redux';
 import store from './../store';
 
 import {TopBar} from './TopBar';
-import {Board} from "./Board";
+import Board from "./Board/Board";
 
-import {connect} from 'react-redux';
-import {Provider} from 'react-redux';
 import {getCardsThunk} from "../store/thunks";
 
 /**

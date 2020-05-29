@@ -7,7 +7,6 @@ export class ActionCreators {
   }
 
   static initCardsActionCreator(cards: ICard[]): Action {
-    console.log(4);
     return {type: actionTypes.INIT_CARDS, cards};
   }
 
