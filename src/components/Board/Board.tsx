@@ -32,7 +32,6 @@ class Board extends Component<any, any> {
   }
 
   onSuccessDialogHandler = (data: ICard, mode: string) => {
-    console.log(mode);
     if (mode === 'create') {
       delete data.id;
       // @ts-ignore

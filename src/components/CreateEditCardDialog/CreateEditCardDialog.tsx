@@ -21,11 +21,10 @@ export class CreateEditCardDialog extends Component<any, any> {
   }
 
   tagDefaultChecked = (tagName: string) => {
-    const checked = this.state.tags.some(
+    return this.state.tags.some(
       (tag: ITag) => {
         return tag.title === tagName;
       });
-    return checked;
   }
   onChangeTags = (checked: boolean, tagName: string) => {
     checked
