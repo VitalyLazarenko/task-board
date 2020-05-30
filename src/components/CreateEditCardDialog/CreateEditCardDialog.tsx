@@ -4,17 +4,17 @@ import {ICard, ITag} from "../../interfaces";
 
 export class CreateEditCardDialog extends Component<any, any> {
   state: { description: string; title: string; tags: ITag[] } = {
-    title: this.props.data.title || '',
-    description: this.props.data.description || '',
-    tags: this.props.data.tags || [],
+    title: this.props.mode === 'edit' ? this.props.card.title : '',
+    description: this.props.mode === 'edit' ? this.props.card.description : '',
+    tags: this.props.mode === 'edit' ? this.props.card.tags : [],
   };
 
   onSubmit = () => {
     const data: ICard = {
-      id: this.props.data.id || '',
+      id: this.props.mode === 'edit' ? this.props.card.id : '',
       title: this.state.title,
       description: this.state.description,
-      status: this.props.status,
+      status: this.props.mode === 'edit' ? this.props.card.status : this.props.status,
       tags: this.state.tags,
     };
     console.log(this.state);
@@ -23,13 +23,13 @@ export class CreateEditCardDialog extends Component<any, any> {
   }
 
   render() {
-    let {onCancel, status, mode, data} = this.props;
+    let {onCancel, status, mode, card} = this.props;
     return (
       <>
         <div className="background">
           <div className="container">
             <div className="header">
-              <label>{mode === 'create' ? status : 'Edit'}</label>
+              <label>{mode === 'create' ? status.toUpperCase() : 'EDIT'}</label>
             </div>
             <div className="body">
               <label>Title: </label>
@@ -53,17 +53,24 @@ export class CreateEditCardDialog extends Component<any, any> {
               }}>Tags: </label>
 
               <div className="tag-box">
-                <span>UI design</span>
-                <input type="checkbox"
-                       name="UI design"
-                       onChange={(e) => e.target.checked
-                         ? this.setState({tags: [...this.state.tags, {title: 'UI design', color: '#ca4554'}]})
-                         : this.setState({
-                           tags: [...this.state.tags.filter((tag: ITag) => {
-                             return tag.title !== "UI design";
-                           })]
-                         })}
-                />
+                <div className="UI-design">
+                  <span>UI design</span>
+                  <input type="checkbox"
+                         name="UI design"
+                         onChange={(e) => {
+                           console.log(e.target.checked);
+                           console.log(this.state.tags)
+                           e.target.checked
+                             ? this.setState({tags: [...this.state.tags, {title: 'UI-design', color: '#ca4554'}]})
+                             : this.setState({
+                               tags: [...this.state.tags.filter((tag: ITag) => {
+                                 return tag.title !== "UI-design";
+                               })]
+                             });
+                           console.log(this.state.tags);
+                         }}
+                  />
+                </div>
                 <div className="marketing">
                   <span>Marketing</span>
                   <input type="checkbox"

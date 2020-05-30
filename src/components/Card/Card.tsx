@@ -1,10 +1,11 @@
 import React, {Component} from "react";
 import './card.css';
+import {ITag} from "../../interfaces";
 
 export class Card extends Component<any, any> {
   render() {
-    let {status, editCardClick, data} = this.props;
-    let statusHeader = status === 'live' ? completed() : null;
+    let {editCardClick, data} = this.props;
+    let statusHeader = data.status === 'live' ? completed() : null;
 
     return (
       <div className={statusHeader !== null ? "card-container completed" : "card-container"}>
@@ -17,15 +18,10 @@ export class Card extends Component<any, any> {
         >Edit
         </div>
         <div className='body-card'>
-          <label className="header-title">Заголовок карточки!</label>
-          <label className="description-title">Ка́рты та́ро́ — колода карт, используемая с середины XV века в
-            различных частях Европы для
-            карточных игр (итальянский tarocchini, французский tarot и австрийский Königrufen), во многие из которых
-            играют и сегодня. С конца XVIII века карты таро стали использоваться и для гадания.</label>
+          <label className="header-title">{data.title.toUpperCase()}</label>
+          <label className="description-title">{data.description}</label>
           <div className="tags-container">
-            <span className="UI-design">UI design</span>
-            <span className="Marketing">Marketing</span>
-            <span className="Research">Research</span>
+            {data.tags.map((tag: ITag) => <span key={tag.title} className={tag.title}>{tag.title.toUpperCase()}</span>)}
           </div>
         </div>
       </div>

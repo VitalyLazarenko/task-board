@@ -27,7 +27,6 @@ export function updateCardThunk(id: string, data: ICard) {
     dispatch(ActionCreators.switchLoadingSpinnerActionCreator(true));
     CardService.update(id, data).then((card: ICard) => {
       dispatch(ActionCreators.updateCardActionCreator(card));
-      dispatch(ActionCreators.deselectCardActionCreator());
       dispatch(ActionCreators.switchLoadingSpinnerActionCreator(false));
     });
   };

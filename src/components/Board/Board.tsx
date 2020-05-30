@@ -6,7 +6,7 @@ import './board.css';
 import {Column} from "../Column";
 import {CreateEditCardDialog} from "../CreateEditCardDialog";
 import {ICard} from "../../interfaces";
-import {createCardThunk, updateCardThunk} from "../../store/thunks";
+import {createCardThunk, getCardsThunk, updateCardThunk} from "../../store/thunks";
 
 class Board extends Component<any, any> {
   state = {
@@ -24,7 +24,7 @@ class Board extends Component<any, any> {
   }
 
   editCardClickHandler = (data: ICard) => {
-    this.setState({popup: {visible: true, data, mode: 'edit'}});
+    this.setState({popup: {visible: true, data: data, mode: 'edit'}});
   }
 
   onCancelDialogHandler = () => {
@@ -34,13 +34,18 @@ class Board extends Component<any, any> {
   onSuccessDialogHandler = (data: ICard, mode: string) => {
     console.log(mode);
     if (mode === 'create') {
+      delete data.id;
       // @ts-ignore
-      store.dispatch(createCardThunk(data))
+      store.dispatch(createCardThunk(data));
     } else {
+      const id = data.id;
+      delete data.id;
       // @ts-ignore
-      store.dispatch(updateCardThunk(data.id, data));
+      store.dispatch(updateCardThunk(id, data));
+      // @ts-ignore
+      store.dispatch(getCardsThunk());
     }
-    this.setState({popup: {visible: false, mode: '', creationStatus: ''}});
+    this.setState({popup: {visible: false, mode: '', data: '', creationStatus: ''}});
   }
 
   render() {
@@ -59,7 +64,7 @@ class Board extends Component<any, any> {
       <div className="board-container">
         {this.state.popup.visible &&
         <CreateEditCardDialog
-            data={this.state.popup.data}
+            card={this.state.popup.data}
             mode={this.state.popup.mode}
             status={this.state.popup.creationStatus}
             onSuccess={this.onSuccessDialogHandler}
