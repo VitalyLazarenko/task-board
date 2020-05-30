@@ -57,6 +57,11 @@ export class CreateEditCardDialog extends Component<any, any> {
                   <span>UI design</span>
                   <input type="checkbox"
                          name="UI design"
+                         defaultChecked={this.state.tags.some(
+                           (tag: ITag) => {
+                             return tag.title === 'UI-design';
+                           }
+                         )}
                          onChange={(e) => {
                            e.target.checked
                              ? this.setState({tags: [...this.state.tags, {title: 'UI-design', color: '#ca4554'}]})
@@ -72,6 +77,11 @@ export class CreateEditCardDialog extends Component<any, any> {
                   <span>Marketing</span>
                   <input type="checkbox"
                          name="marketing"
+                         defaultChecked={this.state.tags.some(
+                           (tag: ITag) => {
+                             return tag.title === 'marketing';
+                           }
+                         )}
                          onChange={(e) => e.target.checked
                            ? this.setState({tags: [...this.state.tags, {title: 'marketing', color: '#ca4554'}]})
                            : this.setState({
@@ -81,10 +91,15 @@ export class CreateEditCardDialog extends Component<any, any> {
                            })}
                   />
                 </div>
-                <div className="research">
+                <div className="research" >
                   <span>Research</span>
                   <input type="checkbox"
                          name="research"
+                         defaultChecked={this.state.tags.some(
+                           (tag: ITag) => {
+                             return tag.title === 'research';
+                           }
+                         )}
                          onChange={(e) => e.target.checked
                            ? this.setState({tags: [...this.state.tags, {title: 'research', color: '#ca4554'}]})
                            : this.setState({
