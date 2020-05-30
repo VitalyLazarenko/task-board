@@ -48,9 +48,9 @@ export const reducer: Reducer<IReducerState, Action> = (state: IReducerState, ac
 
     case actionTypes.SEARCH_CARDS: {
       let cards: ICard[] = state.cards.filter((card: ICard) => {
-        return card.title.includes(action.searchQuery)
-          || card.description.includes(action.searchQuery)
-          || card.tags.some((tag: ITag) => tag.title.includes(action.searchQuery));
+        return card.title.toLowerCase().includes(action.searchQuery.toLowerCase())
+          || card.description.toLowerCase().includes(action.searchQuery.toLowerCase())
+          || card.tags.some((tag: ITag) => tag.title.toLowerCase().includes(action.searchQuery.toLowerCase()));
       });
       return {
         ...state,

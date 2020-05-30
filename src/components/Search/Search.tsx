@@ -1,16 +1,21 @@
 import React, {Component} from "react";
 import './search.css';
 
+import store from '../../store';
+import {ActionCreators} from "../../store/actions";
+
 export class Search extends Component<any, any> {
   state = {
     searchValue: '',
   }
   onSearchHandler = () => {
     if (this.state.searchValue) {
-      console.log(this.state.searchValue);
-    }else {
-      alert('Enter a search word!!!');
+      store.dispatch(ActionCreators.searchCardsActionCreator(this.state.searchValue, true));
     }
+  }
+
+  onClearSearchHandler = () => {
+    store.dispatch(ActionCreators.searchCardsActionCreator('', false));
   }
 
   render() {
@@ -21,6 +26,12 @@ export class Search extends Component<any, any> {
              className='btn-search'
              onClick={this.onSearchHandler}
         >Search
+        </div>
+
+        <div id="search"
+             className='btn-search'
+             onClick={this.onClearSearchHandler}
+        >X
         </div>
       </div>
     )

@@ -38,18 +38,22 @@ class Board extends Component<any, any> {
       store.dispatch(createCardThunk(data));
     } else {
       const id = data.id;
-      delete data.id;
       // @ts-ignore
       store.dispatch(updateCardThunk(id, data));
-      // @ts-ignore
-      store.dispatch(getCardsThunk());
     }
     this.setState({popup: {visible: false, mode: '', data: '', creationStatus: ''}});
   }
 
   render() {
     const columns = this.state.statuses.map((status: string) => {
-      const assignedCards = this.props.cards.filter((card: ICard) => card.status === status)
+      let cards:ICard[] = [];
+      let searchCards = [];
+      if (this.props.search.enable) {
+        searchCards = this.props.cards.filter((card: ICard) => this.props.search.relevantCardIds.includes(card.id));
+      }
+
+      cards = this.props.search.enable ? searchCards : this.props.cards;
+      const assignedCards = cards.filter((card: ICard) => card.status === status);
       return (<Column
         key={status}
         nameColumn={status}
@@ -76,6 +80,6 @@ class Board extends Component<any, any> {
 }
 
 const mapStateToProps = (state: any) => {
-  return {cards: state.cards, loading: state.isLoading};
+  return {cards: state.cards, search: state.search, loading: state.isLoading};
 };
 export default connect(mapStateToProps)(Board);

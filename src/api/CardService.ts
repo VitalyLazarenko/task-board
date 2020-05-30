@@ -22,9 +22,10 @@ export class CardService {
   }
 
   static update(id: string, data: ICard): Promise<ICard> {
+    delete data.id;
     return db.collection("cards").doc(id)
       .update(data)
-      .then(() => data);
+      .then(() => ({...data, id}));
   }
 
   static move(id: string, status: string): Promise<string> {
