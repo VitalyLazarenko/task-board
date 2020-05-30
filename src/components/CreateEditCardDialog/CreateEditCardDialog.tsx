@@ -17,9 +17,24 @@ export class CreateEditCardDialog extends Component<any, any> {
       status: this.props.mode === 'edit' ? this.props.card.status : this.props.status,
       tags: this.state.tags,
     };
-    console.log(this.state);
-    console.log(data);
     this.props.onSuccess(data, this.props.mode);
+  }
+
+  tagDefaultChecked = (tagName: string) => {
+    const checked = this.state.tags.some(
+      (tag: ITag) => {
+        return tag.title === tagName;
+      });
+    return checked;
+  }
+  onChangeTags = (checked: boolean, tagName: string) => {
+    checked
+      ? this.setState({tags: [...this.state.tags, {title: tagName, color: '#ca4554'}]})
+      : this.setState({
+        tags: [...this.state.tags.filter((tag: ITag) => {
+          return tag.title !== tagName;
+        })]
+      });
   }
 
   render() {
@@ -57,56 +72,24 @@ export class CreateEditCardDialog extends Component<any, any> {
                   <span>UI design</span>
                   <input type="checkbox"
                          name="UI design"
-                         defaultChecked={this.state.tags.some(
-                           (tag: ITag) => {
-                             return tag.title === 'UI-design';
-                           }
-                         )}
-                         onChange={(e) => {
-                           e.target.checked
-                             ? this.setState({tags: [...this.state.tags, {title: 'UI-design', color: '#ca4554'}]})
-                             : this.setState({
-                               tags: [...this.state.tags.filter((tag: ITag) => {
-                                 return tag.title !== "UI-design";
-                               })]
-                             });
-                         }}
+                         defaultChecked={this.tagDefaultChecked("UI-design")}
+                         onChange={(e) => this.onChangeTags(e.target.checked, "UI-design")}
                   />
                 </div>
                 <div className="marketing">
                   <span>Marketing</span>
                   <input type="checkbox"
                          name="marketing"
-                         defaultChecked={this.state.tags.some(
-                           (tag: ITag) => {
-                             return tag.title === 'marketing';
-                           }
-                         )}
-                         onChange={(e) => e.target.checked
-                           ? this.setState({tags: [...this.state.tags, {title: 'marketing', color: '#ca4554'}]})
-                           : this.setState({
-                             tags: [...this.state.tags.filter((tag: ITag) => {
-                               return tag.title !== "marketing";
-                             })]
-                           })}
+                         defaultChecked={this.tagDefaultChecked("marketing")}
+                         onChange={(e) => this.onChangeTags(e.target.checked, "marketing")}
                   />
                 </div>
-                <div className="research" >
+                <div className="research">
                   <span>Research</span>
                   <input type="checkbox"
                          name="research"
-                         defaultChecked={this.state.tags.some(
-                           (tag: ITag) => {
-                             return tag.title === 'research';
-                           }
-                         )}
-                         onChange={(e) => e.target.checked
-                           ? this.setState({tags: [...this.state.tags, {title: 'research', color: '#ca4554'}]})
-                           : this.setState({
-                             tags: [...this.state.tags.filter((tag: ITag) => {
-                               return tag.title !== "research";
-                             })]
-                           })}
+                         defaultChecked={this.tagDefaultChecked("research")}
+                         onChange={(e) => this.onChangeTags(e.target.checked, "research")}
                   />
                 </div>
               </div>
