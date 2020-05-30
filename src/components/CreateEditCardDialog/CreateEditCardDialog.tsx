@@ -27,16 +27,17 @@ export class CreateEditCardDialog extends Component<any, any> {
 
     return (
       <>
-        <div className="background" onClick={onCancel}>
+        <div className="background">
           <div className="container">
-            <div className="header">
+            <div className="dialog-header">
               <label>{mode === 'create' ? status.toUpperCase() : 'EDIT'}</label>
             </div>
-            <div className="body">
+            <div className="dialog-form">
               <label>Title: </label>
               <input
                 id="title"
                 type='text'
+                placeholder="Task title"
                 onChange={(e) => this.setState({title: e.target.value})}
                 value={this.state.title}
               />
@@ -44,14 +45,12 @@ export class CreateEditCardDialog extends Component<any, any> {
               <textarea
                 id="description"
                 className="in-description"
+                placeholder="Task description"
                 onChange={(e) => this.setState({description: e.target.value})}
                 value={this.state.description}
               />
 
-              <label style={{
-                textAlign: "center",
-                marginTop: '10px',
-              }}>Tags: </label>
+              <label className='tag-label'>Tags: </label>
 
               <div className="tag-box">
                 <div className="UI-design">
@@ -98,10 +97,10 @@ export class CreateEditCardDialog extends Component<any, any> {
               </div>
             </div>
             <div className="footer">
-              <div className="cancel" onClick={onCancel}>
+              <div className="cancel-btn" onClick={onCancel}>
                 <span>Cancel</span>
               </div>
-              <div className="submit" onClick={this.onSubmit}>
+              <div className="submit-btn" onClick={this.onSubmit}>
                 <span>Submit</span>
               </div>
             </div>

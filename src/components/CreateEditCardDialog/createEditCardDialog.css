@@ -1,3 +1,13 @@
+:root{
+    --ui-disign: #98ca5b;
+    --marketing: #8c80e0;
+    --research: #ca4554;
+
+    --submit: #2091e9;
+    --cancel: #ca4554;
+    --btn-hover:  #fff;
+}
+
 input {
     margin: 5px 10px;
     height: 30px;
@@ -5,7 +15,7 @@ input {
     border: 1px solid rgba(157,164,158,0.6);
 }
 label {
-    margin: 0px 5px;
+    margin: 0 5px;
     font-size: 16px;
     font-weight: bold;
     color: rgba(74, 76, 74, 0.8);
@@ -35,7 +45,7 @@ body{
     align-items: center;
 }
 .container {
-    position: relative;
+    position: absolute;
     width: 500px;
     height: 500px;
     margin: 10px;
@@ -47,15 +57,21 @@ body{
     flex-direction: column;
     justify-content: space-around;
 }
-.header {
+.container span{
+    cursor: pointer;
+}
+.dialog-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.header label{
+.dialog-header label{
+    margin-bottom: 20px;
     font-size: 20px;
 }
-.body {
+.dialog-form {
     display: flex;
     flex-direction: column;
 }
@@ -64,85 +80,129 @@ body{
 }
 
 /* Tag box - styles*/
-.tag-box {
-    margin: 5px 0;
-    display: flex;
-    justify-content: center;
+.tag-label{
+    text-align: center;
+    margin-top: 10px;
+    padding-top: 10px;
 }
 .UI-design {
     text-align: center;
-    margin: 0px 5px 0px 0px;
+    margin: 0 5px 0 0;
     border-radius: 5px;
     padding: 5px;
-    color: #f1f8e9;
+
+    color: var(--btn-hover);
     font-weight: 600;
-    background-color: #98ca5b;
+    background-color: var(--ui-disign);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tag-box {
+    margin: 5px 0;
+    padding-bottom: 10px;
+
+    display: flex;
+    justify-content: center;
+}
+.UI-design:active {
+    cursor: pointer;
+    color: var(--ui-disign);
+    background-color: var(--btn-hover);
 }
 .marketing {
     text-align: center;
-    margin: 0px 5px 0px 0px;
+    margin: 0 5px 0 0;
     border-radius: 5px;
     padding: 5px;
-    color: #f1f8e9;
+
+    color: var(--btn-hover);
     font-weight: 600;
-    background-color: #8c80e0;
+    background-color: var(--marketing);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.marketing:active {
+    cursor: pointer;
+    color: var(--marketing);
+    background-color: var(--btn-hover);
 }
 .research {
     text-align: center;
-    margin: 0px 5px 0px 0px;
+    margin: 0 5px 0 0;
     border-radius: 5px;
     padding: 5px;
-    color: #f1f8e9;
+
+    color: var(--btn-hover);
     font-weight: 600;
-    background-color: #ca4554;
+    background-color: var(--research);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+.research:active {
+    cursor: pointer;
+    color: var(--research);
+    background-color: var(--btn-hover);
+}
+
 /* END of Tag box - styles*/
 
 .footer {
     display: flex;
     justify-content: flex-end;
 }
-.cancel {
+.cancel-btn {
     width: 80px;
     height: 30px;
+
     text-align: center;
-    margin: 0px 5px 0px 0px;
+    margin: 0 10px 0 0;
+
     border-radius: 5px;
-    border: 1px solid #ca4554;
+    border: 1px solid var(--cancel);
     padding: 5px;
-    color: #f1f8e9;
+
+    color: var(--btn-hover);
     font-size: 20px;
     font-weight: 600;
-    background-color: #ca4554;
+    background-color: var(--cancel);
 
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.cancel:hover {
+.cancel-btn:hover {
     cursor: pointer;
-    color: #ca4554;
-    background-color: #fff;
+    color: var(--cancel);
+    background-color: var(--btn-hover);
 }
-.submit {
+.submit-btn {
     width: 80px;
     height: 30px;
+
     text-align: center;
-    margin: 0px 5px 0px 0px;
+    margin-right: 10px;
+
     border-radius: 5px;
-    border: 1px solid #2091e9;
+    border: 1px solid var(--submit);
     padding: 5px;
-    color: #f1f8e9;
+
+    color: var(--btn-hover);
     font-size: 20px;
     font-weight: 600;
-    background-color: #2091e9;
+    background-color: var(--submit);
 
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.submit:hover {
+.submit-btn:hover {
     cursor: pointer;
-    color: #2091e9;
-    background-color: #fff;
+    color: var(--submit);
+    background-color: var(--btn-hover);
 }
