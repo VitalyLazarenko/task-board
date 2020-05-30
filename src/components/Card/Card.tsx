@@ -2,13 +2,21 @@ import React, {Component} from "react";
 import './card.css';
 import {ITag} from "../../interfaces";
 
+
 export class Card extends Component<any, any> {
+
+  dragCard = (id: string, e: any) => {
+    e.dataTransfer.setData("text", id);
+  }
+
   render() {
     let {editCardClick, data} = this.props;
     let statusHeader = data.status === 'live' ? completed() : null;
 
     return (
-      <div className={statusHeader !== null ? "card-container completed" : "card-container"}>
+      <div className={statusHeader !== null ? "card-container completed" : "card-container"}
+           draggable={true}
+           onDragStart={(e) => this.dragCard(data.id, e)}>
 
         {statusHeader}
 
