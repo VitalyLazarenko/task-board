@@ -32,7 +32,7 @@ body{
 }
 
 .background {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
@@ -44,6 +44,7 @@ body{
     justify-content: center;
     align-items: center;
 }
+
 .container {
     position: absolute;
     width: 500px;

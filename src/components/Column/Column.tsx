@@ -17,14 +17,14 @@ export class Column extends Component<any, any> {
   }
 
   render() {
-    let {nameColumn, status, createCardClick, editCardClick, cards} = this.props;
+    let {status, createCardClick, editCardClick, cards} = this.props;
     const content = cards.map((card: ICard) => <Card key={card.id}
                                                      data={card}
                                                      editCardClick={editCardClick}/>)
     return (
       <div className={`column-container ${status}`} onDragOver={this.onDragCardHandler} onDrop={this.onDropCardHandler}>
         <div className="column-header">
-          <label>{nameColumn.toUpperCase()}</label>
+          <label>{status.toUpperCase()}</label>
           <label>{content.length}</label>
         </div>
 

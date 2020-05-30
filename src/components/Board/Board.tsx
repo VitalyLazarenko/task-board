@@ -6,7 +6,7 @@ import './board.css';
 import {Column} from "../Column";
 import {CreateEditCardDialog} from "../CreateEditCardDialog";
 import {ICard} from "../../interfaces";
-import {createCardThunk, getCardsThunk, updateCardThunk} from "../../store/thunks";
+import {createCardThunk, updateCardThunk} from "../../store/thunks";
 
 class Board extends Component<any, any> {
   state = {
@@ -46,6 +46,7 @@ class Board extends Component<any, any> {
 
   render() {
     const columns = this.state.statuses.map((status: string) => {
+
       let cards:ICard[] = [];
       let searchCards = [];
       if (this.props.search.enable) {
@@ -56,13 +57,13 @@ class Board extends Component<any, any> {
       const assignedCards = cards.filter((card: ICard) => card.status === status);
       return (<Column
         key={status}
-        nameColumn={status}
         cards={assignedCards}
         status={status}
         editCardClick={this.editCardClickHandler}
         createCardClick={this.createCardClickHandler}
       />);
     });
+
     return (
       <div className="board-container">
         {this.state.popup.visible &&

@@ -28,8 +28,8 @@ export class Search extends Component<any, any> {
         >Search
         </div>
 
-        <div id="search"
-             className='btn-search'
+        <div id="clear-search"
+             className='btn-clear-search'
              onClick={this.onClearSearchHandler}
         >X
         </div>

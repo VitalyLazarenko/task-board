@@ -96,7 +96,7 @@
     justify-content: space-around;
     align-items: center;
 }
-.UI-design {
+.UI-design-tag {
     text-align: center;
     margin: 0px 5px 0px 0px;
     border-radius: 5px;
@@ -104,7 +104,7 @@
     color: #f1f8e9;
     background-color: #98ca5b;
 }
-.Marketing {
+.marketing-tag {
     text-align: center;
     margin: 0px 5px 0px 0px;
     border-radius: 5px;
@@ -112,7 +112,7 @@
     color: #f1f8e9;
     background-color: #8c80e0;
 }
-.Research {
+.research-tag {
     text-align: center;
     margin: 0px 5px 0px 0px;
     border-radius: 5px;

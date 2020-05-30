@@ -29,7 +29,7 @@ export class Card extends Component<any, any> {
           <label className="header-title">{data.title.toUpperCase()}</label>
           <label className="description-title">{data.description}</label>
           <div className="tags-container">
-            {data.tags.map((tag: ITag) => <span key={tag.title} className={tag.title}>{tag.title.toUpperCase()}</span>)}
+            {data.tags.map((tag: ITag) => <span key={tag.title} className={`${tag.title}-tag`}>{tag.title.toUpperCase()}</span>)}
           </div>
         </div>
       </div>
