@@ -1,7 +1,7 @@
 .search-container {
     width: 200px;
     height: 30px;
-    margin-right: 2.5%;
+    margin-right: 4%;
 
     display: flex;
     justify-content: flex-start;
@@ -17,7 +17,8 @@ input {
     width: 50px;
     height: 50px;
 
-    margin: 0 5px;
+    padding: 2px;
+    margin: 0 2%;
 
     display: flex;
     justify-content: center;
@@ -32,5 +33,6 @@ input {
 .btn-search:hover {
     cursor: pointer;
     color: #2091e9;
+    border: 1px solid #2091e9;
     background-color: #fff;
 }

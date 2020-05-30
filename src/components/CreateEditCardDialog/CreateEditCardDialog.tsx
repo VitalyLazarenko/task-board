@@ -23,10 +23,11 @@ export class CreateEditCardDialog extends Component<any, any> {
   }
 
   render() {
-    let {onCancel, status, mode, card} = this.props;
+    let {onCancel, status, mode} = this.props;
+
     return (
       <>
-        <div className="background">
+        <div className="background" onClick={onCancel}>
           <div className="container">
             <div className="header">
               <label>{mode === 'create' ? status.toUpperCase() : 'EDIT'}</label>
@@ -58,8 +59,6 @@ export class CreateEditCardDialog extends Component<any, any> {
                   <input type="checkbox"
                          name="UI design"
                          onChange={(e) => {
-                           console.log(e.target.checked);
-                           console.log(this.state.tags)
                            e.target.checked
                              ? this.setState({tags: [...this.state.tags, {title: 'UI-design', color: '#ca4554'}]})
                              : this.setState({
@@ -67,7 +66,6 @@ export class CreateEditCardDialog extends Component<any, any> {
                                  return tag.title !== "UI-design";
                                })]
                              });
-                           console.log(this.state.tags);
                          }}
                   />
                 </div>
