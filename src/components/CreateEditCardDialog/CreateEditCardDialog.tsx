@@ -4,14 +4,14 @@ import {ICard, ITag} from "../../interfaces";
 
 export class CreateEditCardDialog extends Component<any, any> {
   state: { description: string; title: string; tags: ITag[] } = {
-    title: '',
-    description: '',
-    tags: [],
+    title: this.props.data.title || '',
+    description: this.props.data.description || '',
+    tags: this.props.data.tags || [],
   };
 
   onSubmit = () => {
     const data: ICard = {
-      id: '',
+      id: this.props.data.id || '',
       title: this.state.title,
       description: this.state.description,
       status: this.props.status,
@@ -23,13 +23,13 @@ export class CreateEditCardDialog extends Component<any, any> {
   }
 
   render() {
-    let {onCancel, status, data} = this.props;
+    let {onCancel, status, mode, data} = this.props;
     return (
       <>
         <div className="background">
           <div className="container">
             <div className="header">
-              <label>{status}</label>
+              <label>{mode === 'create' ? status : 'Edit'}</label>
             </div>
             <div className="body">
               <label>Title: </label>

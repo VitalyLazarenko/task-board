@@ -3,15 +3,17 @@ import './card.css';
 
 export class Card extends Component<any, any> {
   render() {
-    let statusProps = this.props.status;
-    let status = statusProps === 'live' ? completed() : null;
+    let {status, editCardClick, data} = this.props;
+    let statusHeader = status === 'live' ? completed() : null;
 
     return (
-      <div className={statusProps === 'live' ? "card-container completed" : "card-container"}>
-        {status}
+      <div className={statusHeader !== null ? "card-container completed" : "card-container"}>
+
+        {statusHeader}
+
         <div
           className="btn-edit"
-          onClick={this.props.onBtnClick}
+          onClick={() => editCardClick(data)}
         >Edit
         </div>
         <div className='body-card'>

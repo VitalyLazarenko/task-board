@@ -12,6 +12,7 @@ class Board extends Component<any, any> {
   state = {
     popup: {
       visible: false,
+      data: '',
       mode: '',
       creationStatus: '',
     },
@@ -22,22 +23,23 @@ class Board extends Component<any, any> {
     this.setState({popup: {visible: true, mode: 'create', creationStatus: status}});
   }
 
-  editCardClickHandler = () => {
-    this.setState({popup: {visible: true, mode: 'edit'}});
+  editCardClickHandler = (data: ICard) => {
+    this.setState({popup: {visible: true, data, mode: 'edit'}});
   }
 
   onCancelDialogHandler = () => {
-    this.setState({popup: {visible: false, mode: '', creationStatus: ''}});
+    this.setState({popup: {visible: false, mode: '', data: '', creationStatus: ''}});
   }
 
   onSuccessDialogHandler = (data: ICard, mode: string) => {
     console.log(mode);
-    mode === 'create'
+    if (mode === 'create') {
       // @ts-ignore
-      ? store.dispatch(createCardThunk(data))
+      store.dispatch(createCardThunk(data))
+    } else {
       // @ts-ignore
-      : store.dispatch(updateCardThunk(data.id, data));
-
+      store.dispatch(updateCardThunk(data.id, data));
+    }
     this.setState({popup: {visible: false, mode: '', creationStatus: ''}});
   }
 
@@ -57,6 +59,7 @@ class Board extends Component<any, any> {
       <div className="board-container">
         {this.state.popup.visible &&
         <CreateEditCardDialog
+            data={this.state.popup.data}
             mode={this.state.popup.mode}
             status={this.state.popup.creationStatus}
             onSuccess={this.onSuccessDialogHandler}
@@ -69,7 +72,6 @@ class Board extends Component<any, any> {
 }
 
 const mapStateToProps = (state: any) => {
-  console.log(state);
   return {cards: state.cards, loading: state.isLoading};
 };
 export default connect(mapStateToProps)(Board);
